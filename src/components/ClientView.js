@@ -2,13 +2,26 @@ import React from "react";
 import InfoGrid from "./InfoGrid";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import Button from "@mui/material/Button";
+import Notification from "./NotificationBar";
 
 const ClientView = () => {
+  const announce = JSON.parse(localStorage.getItem("announce")) || "";
+  const [announceUsed, setAnnounceUsed] = React.useState(
+    localStorage.getItem("announceUsed") || false
+  );
+
   return (
     <div>
       <h2 style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
         Statistics
       </h2>
+
+      {announceUsed ? (
+        <Notification message={announce} setAnnounceUsed={setAnnounceUsed} />
+      ) : (
+        ""
+      )}
+
       <InfoGrid
         gridHeader="SMART CONTRACT INFO"
         gridObject={{
