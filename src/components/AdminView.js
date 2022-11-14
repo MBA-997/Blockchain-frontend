@@ -6,9 +6,14 @@ import Announce from "./Announce";
 const AdminView = () => {
   return (
     <div>
+      <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
+        <Announce />
+      </div>
+
       <h2 style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
         Statistics
       </h2>
+
       <InfoGrid
         gridHeader="Monitor all Contract Parameters"
         gridObject={{
@@ -22,36 +27,6 @@ const AdminView = () => {
           "Referred By": "",
         }}
       />
-      {/* <InfoGrid
-        gridHeader="PERSONAL STATISTIC"
-        gridObject={{
-          "Your Address": "",
-          "Next Income Countdown": "time",
-          "210% Income Limit Remain": 0,
-          "Daily Income 7%": 0,
-          "Direct Referrel Income": 0,
-          "Matching Bonus": 0,
-          "TOP Sponsor Rewards": 0,
-          "Income Withdrawn To Wallet": 0,
-          "Unwithdrawn Income": 0,
-        }}
-        gridButton={{
-          icon: LocalAtmIcon,
-          variant: "text",
-          color: "warning",
-          iconColor: "#4cbb17",
-          value: "Withdraw",
-          link: "somelink",
-        }}
-      /> */}
-
-      {/* <InfoGrid
-        gridHeader="Statistics"
-        gridObject={{
-          "Total Amount Of Desposited TRX": 0,
-          "Total Amount Of Received TRX": 0,
-        }}
-      /> */}
 
       <InfoGrid
         gridHeader="Request to change Wallet address"
@@ -80,8 +55,6 @@ const AdminView = () => {
           link: "somelink",
         }}
       />
-
-      <Announce />
     </div>
   );
 };
